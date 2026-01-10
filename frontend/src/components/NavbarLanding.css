@@ -1,0 +1,120 @@
+.navbar-landing {
+  background: rgba(0, 0, 0, 0.35); /* better contrast on dark hero */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* FIXED */
+  z-index: 200;
+
+  padding: 1.2rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-landing-left {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+/* LOGO */
+.navbar-landing-logo-container {
+  width: 3rem;
+  height: 3rem;
+  background-image: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.28);
+  transition: all 0.3s ease;
+}
+
+.navbar-landing-logo-container:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.navbar-landing-logo-icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  color: #ffffff;
+}
+
+/* TITLE */
+.navbar-landing-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* RIGHT SIDE BUTTONS */
+.navbar-landing-right {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+/* LOGIN BUTTON */
+.navbar-landing-login-button {
+  padding: 0.7rem 1.4rem;
+  border-radius: 12px;
+  border: none;
+
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #ffffff;
+  font-weight: 600;
+
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar-landing-login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(79, 172, 254, 0.45);
+}
+
+/* SIGNUP BUTTON */
+.navbar-landing-signup-button {
+  padding: 0.65rem 1.4rem;
+  border-radius: 12px;
+
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+
+  color: #ffffff;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.navbar-landing-signup-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 720px) {
+  .navbar-landing {
+    padding: 1rem 1.4rem;
+  }
+
+  .navbar-landing-title {
+    font-size: 1.25rem;
+  }
+
+  .navbar-landing-login-button,
+  .navbar-landing-signup-button {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+  }
+}

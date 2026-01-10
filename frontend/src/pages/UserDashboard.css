@@ -1,0 +1,261 @@
+
+.background-img {
+  position: relative; /* ensure overlay and content stack relative to this */
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('../uploads/bus-background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px; /* keep some breathing room above footer */
+}
+
+/* overlay darkens background only and sits behind content */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65));
+  backdrop-filter: blur(3px);
+}
+
+/* put all visible UI above the overlay */
+.dashboard-content {
+   position: relative;
+  z-index: 2;
+  color: #ffffff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 16px 40px 16px;
+  text-align: center;
+}
+
+/* ensure inputs and buttons inherit high stacking so they are not affected */
+.search-bus-form,
+.search-bus-input,
+.search-bus-button {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.dashboard-content h2 {
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #4facfe; /* updated h2 color */
+}
+
+.dashboard-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 24px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: scale(1.05);
+}
+
+.dashboard-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.dashboard-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: #1976d2;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.dashboard-btn:hover {
+  background: #0d47a1;
+}
+
+/* Add styles for the search bus field */
+
+.search-bus-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px auto;
+  gap: 12px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.search-bus-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+.search-bus-input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow effect */
+}
+
+.search-bus-button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: linear-gradient(135deg,#00f2fe 0%,#4facfe 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(79,172,254,0.12);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+
+.search-bus-button:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(79,172,254,0.16); }
+
+.search-bus-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+}
+
+/* Filters and layout tweaks for professional search UI */
+.search-bus-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 220px auto;
+  gap: 12px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+@media (max-width: 860px) {
+  .search-bus-form {
+    grid-template-columns: 1fr;
+  }
+  .search-bus-button {
+    width: 100%;
+  }
+  .search-filters {
+    justify-self: start;
+  }
+}
+
+.search-filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-left: 6px;
+}
+
+.filter-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #fff;
+  background: rgba(255,255,255,0.04);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #4facfe; /* modern checkbox color (supported browsers) */
+}
+
+/* subtle refinements already present for inputs/buttons are reused */
+.search-bus-input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.search-bus-input::placeholder { color: rgba(255,255,255,0.65); }
+
+.search-error {
+  color: #ff7b7b;
+  margin-top: 8px;
+}
+
+/* Bus list styles for dark theme */
+.buses-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bus-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bus-info h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.bus-info p {
+  color: #ffffff;
+  margin: 4px 0;
+  font-size: 0.9rem;
+}
+
+.bus-info strong {
+  color: #4facfe;
+}
+
+.book-btn {
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.3);
+}
+
+.book-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

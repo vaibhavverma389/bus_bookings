@@ -1,0 +1,111 @@
+.manage-bookings-container {
+  padding: 32px;
+  background: #f0f4f8;
+  min-height: 100vh;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.bookings-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.bookings-table th,
+.bookings-table td {
+  border: 1px solid #ddd;
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.bookings-table th {
+  background: #1976d2;
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #f44336;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.cancel-btn:hover {
+  background: #d32f2f;
+}
+
+.verify-btn {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.verify-btn:hover {
+  background: #45a049;
+}
+
+.reject-btn {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.reject-btn:hover {
+  background: #f57c00;
+}
+
+.status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status.verified {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
