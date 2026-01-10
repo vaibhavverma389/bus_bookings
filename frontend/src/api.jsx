@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api", // FIXED
+  baseURL: "https://bus-bookings-ten.vercel.app/api", // FIXED
 });
 
 API.interceptors.request.use((config) => {
